@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DogCore" representedClassName="DogCore" syncable="YES" codeGenerationType="class">
+        <attribute name="animalType" optional="YES" attributeType="String"/>
+        <attribute name="dateLastSeen" attributeType="String"/>
+        <attribute name="dogAge" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dogBreed" optional="YES" attributeType="String"/>
+        <attribute name="dogGender" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
+        <attribute name="dogID" optional="YES" attributeType="String"/>
+        <attribute name="dogImages" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String : String]"/>
+        <attribute name="dogName" optional="YES" attributeType="String"/>
+        <attribute name="hour" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isFound" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isLost" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="locationAddress" optional="YES" attributeType="String"/>
+        <attribute name="minute" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="ownerEmail" attributeType="String"/>
+        <attribute name="ownerID" attributeType="String"/>
+        <attribute name="ownerName" attributeType="String"/>
+        <attribute name="placeLastSeen" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="dogID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="MessageCore" representedClassName="MessageCore" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="messageContent" optional="YES" attributeType="String"/>
+        <attribute name="messageID" optional="YES" attributeType="String"/>
+        <attribute name="senderEmail" optional="YES" attributeType="String"/>
+        <attribute name="senderName" optional="YES" attributeType="String"/>
+        <attribute name="targetEmail" optional="YES" attributeType="String"/>
+        <attribute name="targetName" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="messageID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="UserCore" representedClassName="UserCore" syncable="YES" codeGenerationType="class">
+        <attribute name="dateCreated" optional="YES" attributeType="String"/>
+        <attribute name="dogs" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String : DogCore]"/>
+        <attribute name="lostDogs" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String : DogCore]"/>
+        <attribute name="messagesReceived" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String : MessageCore]"/>
+        <attribute name="messagesSent" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String : MessageCore]"/>
+        <attribute name="userEmail" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="String"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="userID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>
